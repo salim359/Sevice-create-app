@@ -20,7 +20,7 @@
           "raw": "{\n  \"name\": \"Test Service\",\n  \"description\": \"This is a test service\"\n}"
         },
         "url": {
-          "raw": "https://vs1xwrhbxg.execute-api.us-east-1.amazonaws.com/createService",
+          "raw": "{{deployed_url_here}}/createService",
           "protocol": "https",
           "host": [
             "vs1xwrhbxg",
@@ -43,7 +43,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "https://vs1xwrhbxg.execute-api.us-east-1.amazonaws.com/services",
+          "raw": "{{deployed_url_here}}/services",
           "protocol": "https",
           "host": [
             "vs1xwrhbxg",
@@ -75,7 +75,7 @@
           "raw": "{\n  \"name\": \"Updated Service Name\",\n  \"description\": \"Updated description\"\n}"
         },
         "url": {
-          "raw": "https://vs1xwrhbxg.execute-api.us-east-1.amazonaws.com/updateService/:primary_key",
+          "raw": "{{deployed_url_here}}/updateService/:primary_key",
           "protocol": "https",
           "host": [
             "vs1xwrhbxg",
@@ -106,7 +106,7 @@
         "method": "DELETE",
         "header": [],
         "url": {
-          "raw": "https://vs1xwrhbxg.execute-api.us-east-1.amazonaws.com/deleteService/:primary_key",
+          "raw": "{{deployed_url_here}}/deleteService/:primary_key",
           "protocol": "https",
           "host": [
             "vs1xwrhbxg",
