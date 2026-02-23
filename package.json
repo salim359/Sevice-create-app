@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.994.0",
+    "@aws-sdk/lib-dynamodb": "^3.994.0",
+    "uuid": "^13.0.0"
+  }
+}

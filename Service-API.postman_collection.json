@@ -1,0 +1,135 @@
+{
+  "info": {
+    "name": "Service API",
+    "description": "Collection for testing service CRUD operations",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Service",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test Service\",\n  \"description\": \"This is a test service\"\n}"
+        },
+        "url": {
+          "raw": "https://vs1xwrhbxg.execute-api.us-east-1.amazonaws.com/createService",
+          "protocol": "https",
+          "host": [
+            "vs1xwrhbxg",
+            "execute-api",
+            "us-east-1",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "createService"
+          ]
+        },
+        "description": "Creates a new service with name and description"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Services",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://vs1xwrhbxg.execute-api.us-east-1.amazonaws.com/services",
+          "protocol": "https",
+          "host": [
+            "vs1xwrhbxg",
+            "execute-api",
+            "us-east-1",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "services"
+          ]
+        },
+        "description": "Retrieves all services from DynamoDB"
+      },
+      "response": []
+    },
+    {
+      "name": "Update Service",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated Service Name\",\n  \"description\": \"Updated description\"\n}"
+        },
+        "url": {
+          "raw": "https://vs1xwrhbxg.execute-api.us-east-1.amazonaws.com/updateService/:primary_key",
+          "protocol": "https",
+          "host": [
+            "vs1xwrhbxg",
+            "execute-api",
+            "us-east-1",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "updateService",
+            ":primary_key"
+          ],
+          "variable": [
+            {
+              "key": "primary_key",
+              "value": "your-service-id-here",
+              "description": "The primary key of the service to update"
+            }
+          ]
+        },
+        "description": "Updates an existing service's name and description"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Service",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://vs1xwrhbxg.execute-api.us-east-1.amazonaws.com/deleteService/:primary_key",
+          "protocol": "https",
+          "host": [
+            "vs1xwrhbxg",
+            "execute-api",
+            "us-east-1",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            "deleteService",
+            ":primary_key"
+          ],
+          "variable": [
+            {
+              "key": "primary_key",
+              "value": "your-service-id-here",
+              "description": "The primary key of the service to delete"
+            }
+          ]
+        },
+        "description": "Deletes a service by its primary key"
+      },
+      "response": []
+    }
+  ]
+}

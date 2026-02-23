@@ -1,0 +1,64 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: serverlesslearn2
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: serviceapp
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: service-create-appp
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "dynamodb:PutItem"
+        - "dynamodb:GetItem"
+        - "dynamodb:UpdateItem"
+        - "dynamodb:DeleteItem"
+        - "dynamodb:Scan"
+      Resource: 
+        Fn::GetAtt:
+          - ServiceTable
+          - Arn
+  environment:
+    DYNAMODB_TABLE: ServiceTable
+
+functions:
+  createService:
+    handler: handlers/createService.createService
+    events:
+      - httpApi:
+          path: /createService
+          method: post
+  getServices:
+    handler: handlers/getService.getServices
+    events:
+      - httpApi:
+          path: /services
+          method: get
+  updateService:
+    handler: handlers/updateService.updateService
+    events:
+      - httpApi:
+          path: /updateService/{primary_key}
+          method: put
+  deleteService:
+    handler: handlers/deleteService.deleteService
+    events: 
+      - httpApi: 
+          path: /deleteService/{primary_key}
+          method: delete 
+
+resources:
+  Resources:
+    ServiceTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ServiceTable
+        AttributeDefinitions:
+          - AttributeName: primary_key
+            AttributeType: S
+        KeySchema:
+          - AttributeName: primary_key
+            KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
