@@ -418,5 +418,3 @@ Once deployed, you'll have these endpoints:
 - [Serverless Framework Documentation](https://www.serverless.com/framework/docs/tutorial)
 - [AWS SDK for JavaScript v3](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/)
 - [DynamoDB DocumentClient](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-lib-dynamodb/)
-My guide 
-https://docs.google.com/document/d/1VTQJ-JzGxzbFbuV0LIw1a3yM-F6o9yR3ZzqDtyC-snQ/edit?tab=t.0
